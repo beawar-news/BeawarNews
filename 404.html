@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Redirecting…</title>
+</head>
+<body>
+  <p>Redirecting…</p>
+  <script>
+    // GitHub Pages has no server-side routing -- a request for /n/<slug>
+    // (a shared article link, one per news item, so there's no real file
+    // for each one) always lands here, on the site's 404 page. This finds
+    // the "/n/" segment in whatever path was requested and forwards to
+    // n/index.html?slug=... instead, which does the actual "try opening
+    // the app, else show the download page" work (see assets/js/deeplink.js).
+    //
+    // Deriving the prefix straight from location.pathname (rather than a
+    // hardcoded assumption) means this works unmodified whether the site
+    // ends up deployed at a domain root (username.github.io) or a project
+    // subpath (username.github.io/repo-name/n/<slug>).
+    (function () {
+      var path = window.location.pathname;
+      var marker = '/n/';
+      var idx = path.indexOf(marker);
+
+      if (idx !== -1) {
+        var slug = path.slice(idx + marker.length).replace(/\/+$/, '');
+        var base = path.slice(0, idx);
+        var query = slug ? '?slug=' + encodeURIComponent(slug) : '';
+        window.location.replace(base + '/n/index.html' + query);
+        return;
+      }
+
+      // Some other, genuinely unmatched URL -- just go home. Relative (no
+      // leading slash) so it resolves under whatever base this 404 page
+      // itself is already serving from.
+      window.location.replace('index.html');
+    })();
+  </script>
+</body>
+</html>
