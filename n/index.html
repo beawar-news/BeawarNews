@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beawar Ki News App में खोलें</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" href="../assets/img/logo-512.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>h2 { font-family: 'Poppins', 'Hind', sans-serif; }</style>
+</head>
+<body>
+
+  <div class="resolver">
+    <div class="resolver-card">
+      <img src="../assets/img/logo.png" alt="Beawar Ki News" style="width:64px;height:64px;border-radius:16px;margin:0 auto 20px;" />
+
+      <div id="resolver-spinner" class="resolver-spinner"></div>
+      <div id="resolver-opening">
+        <h2>App में खोला जा रहा है…</h2>
+        <p style="color: rgb(var(--text-secondary)); font-size: 14.5px; margin-top: 8px;">
+          अगर Beawar Ki News App आपके फ़ोन में installed है, तो यह खबर सीधा App में खुल जाएगी।
+        </p>
+      </div>
+
+      <div id="resolver-fallback" style="display:none;">
+        <h2>App अभी तक Install नहीं है</h2>
+        <p style="color: rgb(var(--text-secondary)); font-size: 14.5px; margin: 8px 0 24px;">
+          कोई बात नहीं — App download करिए, यह और आगे की सारी खबरें App में सीधा पढ़ सकते हैं।
+        </p>
+        <a class="btn btn-primary btn-lg btn-block" data-bnw="download-apk" href="#">⬇️ App Download करें</a>
+        <a href="../index.html" style="display:inline-block; margin-top: 18px; font-size: 14px; color: rgb(var(--text-muted));">
+          या Website पर जाएं
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/deeplink.js"></script>
+</body>
+</html>
