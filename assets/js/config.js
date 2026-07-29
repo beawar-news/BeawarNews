@@ -19,5 +19,5 @@ window.BNW_CONFIG = {
 
   // TODO: swap for the real inbox before publishing. Nothing else on the
   // site should ever hardcode an email address -- only this file.
-  contactEmail: 'contact@beawarnews.in',
+  contactEmail: 'support.beawarkinews@gmail.com',
 };
